@@ -4,15 +4,18 @@ Command Line Interface for the Citation Manager Plugin.
 
 This plugin can only be executed from the command line.
 
-Execute the batch process with the following command:
+Execute the inbound code with the following command:
 
-php $OJS/tools/importExport.php CitationManagerCLIPlugin process
+`php $OJS/tools/importExport.php CitationManagerCLIPlugin inbound`
 
-Execute the batch deposit with the following command:
+Execute the outbound code with the following command:
 
-php $OJS/tools/importExport.php CitationManagerCLIPlugin deposit
+`php $OJS/tools/importExport.php CitationManagerCLIPlugin outbound`
 
 Notes
 
-This plugin needs the generic plugin Citation Manager and will not work without.
-The Citation Manager can be downloaded from: https://github.com/TIBHannover/citationManager
+- This plugin needs the generic plugin Citation Manager and will not work without.  
+  The Citation Manager can be downloaded from: https://github.com/TIBHannover/citationManager
+- This plugin is compatible with the following OJS versions:
+    - version 3.3.0
+    - version 3.4.0
