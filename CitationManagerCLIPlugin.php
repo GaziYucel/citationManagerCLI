@@ -60,15 +60,13 @@ class CitationManagerCLIPlugin extends ImportExportPlugin
         }
 
         switch ($command) {
-            case 'process':
-                $process =
-                    new \APP\plugins\generic\citationManager\classes\Handlers\ProcessHandler();
-                $process->batchExecute();
+            case 'inbound':
+                $inbound = new \APP\plugins\generic\citationManager\classes\Handlers\InboundHandler();
+                $inbound->batchExecute();
                 return;
-            case 'deposit':
-                $deposit =
-                    new \APP\plugins\generic\citationManager\classes\Handlers\DepositHandler();
-                $deposit->batchExecute();
+            case 'outbound':
+                $outbound = new \APP\plugins\generic\citationManager\classes\Handlers\OutboundHandler();
+                $outbound->batchExecute();
                 return;
         }
 
@@ -117,5 +115,3 @@ class CitationManagerCLIPlugin extends ImportExportPlugin
         return array_pop($class);
     }
 }
-
-class_alias('\CitationManagerCLIPlugin', '\APP\plugins\generic\citationManagerCLI\CitationManagerCLIPlugin');
