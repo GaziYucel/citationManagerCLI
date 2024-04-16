@@ -19,13 +19,16 @@ class CitationManagerCLIPlugin extends ImportExportPlugin
     /** @copydoc ImportExportPlugin::register() */
     public function register($category, $path, $mainContextId = null): bool
     {
-        $success = parent::register($category, $path, $mainContextId);
+        if (parent::register($category, $path, $mainContextId)) {
 
-        if ($success && $this->getEnabled()) {
-            $this->addLocaleData();
+            if ($this->getEnabled()) {
+                $this->addLocaleData();
+            }
+
+            return true;
         }
 
-        return $success;
+        return false;
     }
 
     /** @copydoc ImportExportPlugin::display() */
@@ -45,7 +48,10 @@ class CitationManagerCLIPlugin extends ImportExportPlugin
     public function executeCLI($scriptName, &$args): void
     {
         $command = array_shift($args);
-        $isCitationManagerPluginInstalled = $this->isCitationManagerPluginInstalled();
+
+        $isCitationManagerPluginInstalled = false;
+        if(PluginRegistry::getPlugin('generic', $this->citationManagerPluginName))
+            $isCitationManagerPluginInstalled = true;
 
         // check if all requirements met
         if (!$command || !$isCitationManagerPluginInstalled) {
@@ -71,20 +77,6 @@ class CitationManagerCLIPlugin extends ImportExportPlugin
         }
 
         $this->usage($scriptName);
-    }
-
-    /**
-     * Checks whether the Citation Manager Plugin is installed.
-     *
-     * @return bool
-     */
-    public function isCitationManagerPluginInstalled(): bool
-    {
-        $plugin = PluginRegistry::getPlugin('generic', $this->citationManagerPluginName);
-
-        if ($plugin) return true;
-
-        return false;
     }
 
     /** @copydoc ImportExportPlugin::usage() */
