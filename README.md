@@ -6,15 +6,15 @@ This plugin can only be executed from the command line.
 
 Execute the inbound code with the following command:
 
-`php $OJS/tools/importExport.php CitationManagerCLIPlugin inbound`
+`php $OJS/tools/importExport.php CitationManagerCLIPlugin process`
 
 Execute the outbound code with the following command:
 
-`php $OJS/tools/importExport.php CitationManagerCLIPlugin outbound`
+`php $OJS/tools/importExport.php CitationManagerCLIPlugin deposit`
 
 Notes
 
-- This plugin needs the generic plugin Citation Manager and will not work without.  
+- This plugin needs the generic plugin Citation Manager and will not work without.
   The Citation Manager can be downloaded from: https://github.com/TIBHannover/citationManager
 - This plugin is compatible with the following OJS versions:
     - version 3.3.0
