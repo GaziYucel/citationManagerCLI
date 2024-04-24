@@ -66,11 +66,11 @@ class CitationManagerCLIPlugin extends ImportExportPlugin
         }
 
         switch ($command) {
-            case 'inbound':
+            case 'process':
                 $inbound = new \APP\plugins\generic\citationManager\classes\Handlers\ProcessHandler();
                 $inbound->batchExecute();
                 return;
-            case 'outbound':
+            case 'deposit':
                 $outbound = new \APP\plugins\generic\citationManager\classes\Handlers\DepositHandler();
                 $outbound->batchExecute();
                 return;
