@@ -6,11 +6,11 @@ This plugin can only be executed from the command line.
 
 Execute the inbound code with the following command:
 
-`php $OJS/tools/importExport.php CitationManagerCLIPlugin process`
+`php tools/importExport.php CitationManagerCLIPlugin process`
 
 Execute the outbound code with the following command:
 
-`php $OJS/tools/importExport.php CitationManagerCLIPlugin deposit`
+`php tools/importExport.php CitationManagerCLIPlugin deposit`
 
 Notes
 
