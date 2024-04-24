@@ -55,10 +55,10 @@ class CitationManagerCLIPlugin extends ImportExportPlugin
 
         // check if all requirements met
         if (!$command || !$isCitationManagerPluginInstalled) {
-            echo __('plugins.importexport.CitationManagerCLIPlugin.cliError') . "\n";
+            echo __('plugins.importexport.citationManagerCLI.cliError') . "\n";
 
             if (!$isCitationManagerPluginInstalled)
-                echo __('plugins.importexport.CitationManagerCLIPlugin.notInstalled') . "\n";
+                echo __('plugins.importexport.citationManagerCLI.notInstalled') . "\n";
 
             $this->usage($scriptName);
 

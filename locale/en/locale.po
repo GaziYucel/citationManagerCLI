@@ -28,7 +28,7 @@ msgstr ""
 "This plugin needs the generic plugin Citation Manager\n"
 ""
 
-msgid "plugins.importexport.CitationManagerCLIPlugin.notInstalled"
+msgid "plugins.importexport.CitationManagerCLI.notInstalled"
 msgstr "The generic Citation Manager Plugin is not installed"
 
 msgid "plugins.importexport.citationManagerCLI.descriptionExtendedHtml"
