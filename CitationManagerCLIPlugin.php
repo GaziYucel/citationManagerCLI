@@ -36,12 +36,17 @@ class CitationManagerCLIPlugin extends ImportExportPlugin
     {
         parent::display($args, $request);
 
-        $templateManager = TemplateManager::getManager();
-        $templateManager->assign([
-            'descriptionExtendedHtml'
-            => __('plugins.importexport.citationManagerCLI.descriptionExtendedHtml',
-                ['pluginName' => $this->getName()])]);
-        $templateManager->display($this->getTemplateResource('index.tpl'));
+        try{
+            $templateManager = TemplateManager::getManager();
+            $templateManager->assign([
+                'descriptionExtendedHtml'
+                => __('plugins.importexport.citationManagerCLI.descriptionExtendedHtml',
+                    ['pluginName' => $this->getName()])]);
+            $templateManager->display($this->getTemplateResource('index.tpl'));
+        }
+        catch (Exception $exception) {
+            error_log($exception->getMessage());
+        }
     }
 
     /** @copydoc ImportExportPlugin::executeCLI() */
